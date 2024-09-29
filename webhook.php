@@ -10,7 +10,7 @@ $chatId = $updateArray['message']['chat']['id'];
 $message = $updateArray['message']['text'];
 
 // Set the bot token (Replace with your own)
-$botToken = "YOUR_BOT_TOKEN_HERE";
+$botToken = "7831758723:AAGE6llkvTnYJHRpXbx0drYb2SdBmnWocag";
 
 // Respond based on the incoming message
 if ($message === "/start") {
