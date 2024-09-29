@@ -13,10 +13,10 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy all project files to the container
+# Copy all project files, including composer.json
 COPY . .
 
-# Check the files in the directory (optional, for debugging)
+# Verify that composer.json is present
 RUN ls -la /var/www/html
 
 # Install PHP dependencies via Composer
