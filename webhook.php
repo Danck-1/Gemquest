@@ -1,21 +1,27 @@
 <?php
+// Get the incoming Telegram update as JSON
+$update = file_get_contents('php://input');
 
-// Load the composer autoload if you're using dependencies
-require __DIR__ . '/vendor/autoload.php';
+// Decode the JSON update to an associative array
+$updateArray = json_decode($update, true);
 
-// You can access the raw POST data received from Telegram
-$update = json_decode(file_get_contents('php://input'), TRUE);
+// Extract necessary information
+$chatId = $updateArray['message']['chat']['id'];
+$message = $updateArray['message']['text'];
 
-if (isset($update['message'])) {
-    $chat_id = $update['message']['chat']['id'];
-    $message_text = $update['message']['text'];
+// Set the bot token (Replace with your own)
+$botToken = "YOUR_BOT_TOKEN_HERE";
 
-    // Sample response message to user
-    $response_text = "You said: " . $message_text;
-
-    // Use Telegram Bot API to send a message back
-    $url = "https://api.telegram.org/bot7831758723:AAGE6llkvTnYJHRpXbx0drYb2SdBmnWocag/sendMessage?chat_id=" . $chat_id . "&text=" . urlencode($response_text);
-
-    file_get_contents($url);
+// Respond based on the incoming message
+if ($message === "/start") {
+    $responseMessage = "Welcome! I am your bot.";
+} else {
+    $responseMessage = "You said: " . $message;
 }
+
+// Send a message back using Telegram's sendMessage API
+$sendMessageUrl = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&text=" . urlencode($responseMessage);
+
+// Send the message
+file_get_contents($sendMessageUrl);
 ?>
