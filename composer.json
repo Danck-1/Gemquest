@@ -1,0 +1,12 @@
+{
+    "name": "your-vendor/your-package",
+    "description": "A brief description of your project",
+    "require": {
+        "monolog/monolog": "^2.0"  // Example dependency
+    },
+    "autoload": {
+        "psr-4": {
+            "YourNamespace\\": "src/"
+        }
+    }
+}
