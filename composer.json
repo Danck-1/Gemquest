@@ -6,6 +6,6 @@
         "irazasyed/telegram-bot-sdk": "^3.14",
         "guzzlehttp/guzzle": "^7.9",
         "ext-pdo_mysql": "*",
-        "symfony/polyfill-mbstring": "^1.25"
+        "symfony/polyfill-mbstring": "^1.0"  // Add this line
     }
 }
