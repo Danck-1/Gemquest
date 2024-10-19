@@ -5,6 +5,7 @@
         "ext-pdo_pgsql": "*",
         "irazasyed/telegram-bot-sdk": "^3.14",
         "guzzlehttp/guzzle": "^7.9",
-        "ext-pdo_mysql": "*"
+        "ext-pdo_mysql": "*",
+        "symfony/polyfill-mbstring": "^1.25"
     }
 }
