@@ -1,21 +1,21 @@
 /* Set Dark Theme as Default - Dark colors are defined under :root */
 :root {
-    --background-color: #ffffff; /* White background for a clean look */
-    --text-color: #000000; /* Black text for contrast */
-    --card-bg-color: #f0f0f0; /* Light grey for card backgrounds */
-    --card-text-color: #000000; /* Black text for cards */
-    --nav-bg-color: #e0e0e0; /* Light grey for navigation */
-    --nav-text-color: #000000; /* Black text for navigation */
-    --progress-bar-color: #cccccc; /* Light grey for progress bars */
-    --active-bar-color: #000000; /* Black for completed segments */
-    --task-card-bg: #f5f5f5; /* Slightly darker grey for task cards */
+    --background-color: #000000; /* Black background for a dark theme */
+    --text-color: #ffffff; /* White text for contrast */
+    --card-bg-color: #333333; /* Dark grey for card backgrounds */
+    --card-text-color: #ffffff; /* White text for cards */
+    --nav-bg-color: #222222; /* Dark grey for navigation */
+    --nav-text-color: #ffffff; /* White text for navigation */
+    --progress-bar-color: #666666; /* Grey for progress bars */
+    --active-bar-color: #4caf50; /* Green for completed segments */
+    --task-card-bg: #444444; /* Slightly lighter grey for task cards */
     --button-bg: #ffffff; /* White button background */
     --button-hover-bg: #dddddd; /* Light grey for button hover */
     --button-text-color: #000000; /* Black text for buttons */
-    --reward-color: #888888; /* Grey for reward text */
-    --link-color: #000000; /* Black for links */
-    --modal-bg-color: #f0f0f0; /* Light grey for modal background */
-    --modal-text-color: #000000; /* Black text for modal */
+    --reward-color: #cccccc; /* Light grey for reward text */
+    --link-color: #ffffff; /* White for links */
+    --modal-bg-color: #333333; /* Dark grey for modal background */
+    --modal-text-color: #ffffff; /* White text for modal */
 }
 
 /* General Styles */
