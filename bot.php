@@ -1,12 +1,10 @@
 <?php
+// Display errors for debugging (remove in production)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Output PHP configuration information (you can remove this later if it's just for debugging)
-phpinfo();
-
-// Make sure the following code is inside the same PHP block
+// Include Composer's autoloader
 require 'vendor/autoload.php';
 use Telegram\Bot\Api;
 
@@ -33,10 +31,13 @@ try {
 }
 
 // Get the webhook update
-$update = $telegram->getWebhookUpdate();
-
-// Log the entire update object for debugging
-error_log('Incoming update: ' . print_r($update, true));
+try {
+    $update = $telegram->getWebhookUpdate();
+    error_log('Incoming update: ' . print_r($update, true));
+} catch (Exception $e) {
+    error_log('Failed to get webhook update: ' . $e->getMessage());
+    exit('Webhook update failed');
+}
 
 // Check if the update contains a message
 if (isset($update['message'])) {
@@ -139,6 +140,8 @@ if (isset($update['message'])) {
                 ]);
             } catch (PDOException $e) {
                 error_log('Database query error: ' . $e->getMessage());
+            } catch (Exception $e) {
+                error_log('Error sending message: ' . $e->getMessage());
             }
         }
     } else {
