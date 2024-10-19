@@ -16,7 +16,7 @@ $telegram = new Api($botToken);
 $host = 'aws-0-us-east-1.pooler.supabase.com';
 $dbname = 'postgres';
 $user = 'postgres.fncvidwqvcmbivahaolo';
-$password = 'Fisayomi@123';
+$password = 'fisayomi@123';
 $port = '6543';
 
 try {
@@ -131,7 +131,7 @@ if (isset($update['message'])) {
                 }
 
                 // Send welcome message with mini app URL
-                $miniAppUrl = 'https://t.me/Gemquestbot/mygem'; // Link to your mini app
+                $miniAppUrl = 'https://t.me/BOXERCOIN_BOT/box'; // Link to your mini app
                 $urlWithId = $miniAppUrl . '?telegram_id=' . $telegram_id; // Include Telegram ID
 
                 $telegram->sendMessage([
